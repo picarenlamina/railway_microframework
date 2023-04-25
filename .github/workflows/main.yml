@@ -13,13 +13,11 @@ jobs:
     - name: checkout
       uses: actions/checkout@master
     
-    - uses: okteto/context@latest
-      with:
-        token: ${{ secrets.OKTETO_TOKEN }}
-        name: microframework_picarenlamina
-        
+  
     - name: Deploy application
-      uses: okteto/deploy-stack@master
+      uses: devtomio/action-railway@v1.1.4
       with:
-        build: "true"
-        namespace: microframework_picarenlamina
+            railway_token: ${{ secrets.RAILWAY_TOKEN }}
+        
+        
+        
